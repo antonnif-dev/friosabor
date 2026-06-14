@@ -67,23 +67,17 @@ function MenuPage() {
 
     return (
         <div className="space-y-8">
-            <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-blue-400 p-10 text-white">
+            <div className="rounded-2xl border border-black p-10 text-black">
                 <h1 className="text-4xl font-bold">
                     Marmitas caseiras feitas para o seu dia a dia
                 </h1>
 
-                <p className="mt-3 text-white/90">
+                <p className="mt-3 text-gray-900">
                     Comida fresca, saudável e entregue onde você estiver.
                 </p>
             </div>
 
-            <div>
-                <p className="mt-2 text-slate-600">
-                    Escolha seus produtos favoritos.
-                </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-slate-600">
+            <div className="flex justify-around gap-4 text-center text-slate-600">
                 <div>
                     ⏱ Entrega rápida
                 </div>
@@ -95,10 +89,10 @@ function MenuPage() {
                 </div>
             </div>
 
-            <div className="flex w-full gap-2 flex-wrap mb-6">
+            <div className="flex justify-center w-full gap-2 flex-wrap mb-6">
                 <button
                     onClick={() => setAbaAtiva("combos")}
-                    className={`w-50 py-2 rounded-xl text-lg font-medium ${abaAtiva === "combos"
+                    className={`w-30 md:w-70 py-2 md:py-4 rounded-xl text-sm md:text-lg font-medium ${abaAtiva === "combos"
                         ? "bg-green-600 text-white"
                         : "bg-slate-200"
                         }`}
@@ -108,7 +102,7 @@ function MenuPage() {
 
                 <button
                     onClick={() => setAbaAtiva("marmitas")}
-                    className={`w-50 py-2 rounded-xl text-lg font-medium ${abaAtiva === "marmitas"
+                    className={`w-30 md:w-70 py-2 md:py-4 rounded-xl text-sm md:text-lg font-medium ${abaAtiva === "marmitas"
                         ? "bg-green-600 text-white"
                         : "bg-slate-200"
                         }`}
@@ -118,7 +112,7 @@ function MenuPage() {
 
                 <button
                     onClick={() => setAbaAtiva("sobremesas")}
-                    className={`w-50 py-2 rounded-xl text-lg font-medium ${abaAtiva === "sobremesas"
+                    className={`w-30 md:w-70 py-2 md:py-4 rounded-xl text-sm md:text-lg font-medium ${abaAtiva === "sobremesas"
                         ? "bg-green-600 text-white"
                         : "bg-slate-200"
                         }`}
@@ -128,7 +122,7 @@ function MenuPage() {
 
                 <button
                     onClick={() => setAbaAtiva("bebidas")}
-                    className={`w-50 py-2 rounded-xl text-lg font-medium ${abaAtiva === "bebidas"
+                    className={`w-30 md:w-70 py-2 md:py-4 rounded-xl text-sm md:text-lg font-medium ${abaAtiva === "bebidas"
                         ? "bg-green-600 text-white"
                         : "bg-slate-200"
                         }`}

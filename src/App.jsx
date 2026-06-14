@@ -10,9 +10,11 @@ import MyOrdersPage from "./pages/MyOrdersPage";
 import ProfilePage from "./pages/ProfilePage";
 import Suggestions from "./pages/Suggestions";
 import Reviews from "./pages/Reviews";
+import Addresses from "./pages/AddressesPage";
 import PrivateRoute from "./components/PrivateRoute";
 
 import AdminProductsPage from "./pages/AdminProductsPage";
+import AdminStockPage from "./pages/AdminStockPage";
 
 function App() {
   return (
@@ -80,8 +82,22 @@ function App() {
           />
 
           <Route
+            path="/addresses"
+            element={
+              <PrivateRoute>
+                <Addresses />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
             path="/admin/products"
             element={<AdminProductsPage />}
+          />
+
+          <Route
+            path="/admin/stock"
+            element={<AdminStockPage />}
           />
 
           <Route

@@ -1,22 +1,14 @@
 import { Navigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
 function PrivateRoute({ children }) {
 
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
 
-    useEffect(() => {
-
-        if (!user) {
-
-            alert(
-                "Você precisa estar logado."
-            );
-        }
-
-    }, [user]);
-
+    if (loading) {
+        return null; // ou um loader/spinner
+    }
 
     if (!user) {
 

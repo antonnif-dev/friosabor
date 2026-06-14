@@ -8,26 +8,43 @@ import { api } from "../services/api";
 
 export const AuthContext = createContext();
 
-export function AuthProvider({children}) {
+export function AuthProvider({ children }) {
 
-    const [user, setUser] =
-        useState(null);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    /*
+        useEffect(() => {
+    
+            const userStorage =
+                localStorage.getItem(
+                    "user"
+                );
+    
+            if (userStorage) {
+    
+                setUser(
+                    JSON.parse(
+                        userStorage
+                    )
+                );
+            }
+    
+        }, []);
+    */
 
     useEffect(() => {
+        const userStorage = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
 
-        const userStorage =
-            localStorage.getItem(
-                "user"
-            );
+        if (userStorage && token) {
 
-        if (userStorage) {
+            api.defaults.headers.common.Authorization =
+                `Bearer ${token}`;
 
-            setUser(
-                JSON.parse(
-                    userStorage
-                )
-            );
+            setUser(JSON.parse(userStorage));
         }
+
+        setLoading(false);
 
     }, []);
 
@@ -104,7 +121,8 @@ export function AuthProvider({children}) {
                 login,
                 register,
                 logout,
-                updateUser
+                updateUser,
+                loading
             }}
         >
 

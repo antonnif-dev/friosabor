@@ -14,34 +14,16 @@ function CartPage() {
     } = useContext(CartContext);
 
     const navigate = useNavigate();
-
     const { user } = useContext(AuthContext);
+    const [mostrarCheckout, setMostrarCheckout] = useState(false);
+    const [endereco, setEndereco] = useState("");
+    const [numero, setNumero] = ("");
+    const [bairro, setBairro] = useState("");
+    const [complemento, setComplemento] = useState("");
+    const [formaPagamento, setFormaPagamento] = useState("mercadopago");
+    const [loadingPagamento, ] = useState(false);
 
-    const [mostrarCheckout, setMostrarCheckout] =
-        useState(false);
-
-    const [endereco, setEndereco] =
-        useState("");
-
-    const [numero, setNumero] =
-        useState("");
-
-    const [bairro, setBairro] =
-        useState("");
-
-    const [complemento, setComplemento] =
-        useState("");
-
-    const [formaPagamento,
-        setFormaPagamento] =
-        useState("mercadopago");
-
-    const [loadingPagamento,
-        setLoadingPagamento] =
-        useState(false);
-
-    const subtotal =
-        items.reduce(
+    const subtotal =  items.reduce(
             (total, item) =>
                 total +
                 (
@@ -287,6 +269,16 @@ calcularTaxaEntrega(
                         </span>
                     </div>
 
+                    <div className="mt-6 flex justify-between">
+                        <span className="text-slate-600">
+                            Entrega
+                        </span>
+
+                        <span>
+                            R$ {taxaEntrega},00
+                        </span>
+                    </div>
+
                     <div className="mt-4 flex justify-between text-lg font-bold">
                         <span>Total</span>
 
@@ -448,17 +440,8 @@ calcularTaxaEntrega(
                                     </span>
                                 </div>
 
-                                <div
-                                    className="
-                        flex
-                        justify-between
-                        text-lg
-                        font-bold
-                    "
-                                >
-                                    <span>
-                                        Total
-                                    </span>
+                                <div className="flex justify-between text-lg font-bold">
+                                    <span>Total</span>
 
                                     <span>
                                         R$

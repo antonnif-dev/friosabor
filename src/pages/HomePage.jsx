@@ -63,22 +63,11 @@ function HomePage() {
         <div className="space-y-20">
 
             {/* Hero */}
-            <section
-                className="
-                    overflow-hidden
-                    rounded-3xl
-                    bg-gradient-to-r
-                    from-blue-600
-                    to-blue-700
-                    px-8
-                    py-16
-                    text-white
-                "
-            >
+            <section className="flex justify-around rounded-3xl border-2 border-black px-8 mx-5 md:mx-10 py-5 gap-5 md:gap-10">
 
                 <div>
 
-                    <h1 className="text-4xl font-bold md:text-6xl">
+                    <h1 className="text-black text-4xl font-bold md:text-6xl">
                         Marmitas frescas entregues na sua casa
                     </h1>
 
@@ -86,7 +75,7 @@ function HomePage() {
                         className="
                             mt-6
                             text-lg
-                            text-blue-100
+                            text-black
                         "
                     >
                         Alimentação saudável,
@@ -98,13 +87,13 @@ function HomePage() {
 
                         <Link
                             to="/menu"
-                            className="
+                            className="border border-black
                                 rounded-xl
                                 bg-white
                                 px-6
                                 py-3
                                 font-semibold
-                                text-blue-600
+                                text-black
                             "
                         >
                             Ver Cardápio
@@ -112,10 +101,8 @@ function HomePage() {
 
                         <Link
                             to="/orders"
-                            className="
+                            className="text-black border border-black
                                 rounded-xl
-                                border
-                                border-white
                                 px-6
                                 py-3
                                 font-semibold
@@ -128,43 +115,31 @@ function HomePage() {
 
                 </div>
 
+                <div>
+                    <img 
+                    className="w-sm h-65"
+                    src="logo-friosabor1.png" alt="" />
+                </div>
+
             </section>
 
             {/* Benefícios */}
             <section>
 
                 <h2
-                    className="
-                        mb-8
-                        text-center
-                        text-3xl
-                        font-bold
-                    "
-                >
+                    className="mb-8 text-center text-3xl md:text-5xl font-bold">
                     Por que escolher nossas marmitas?
                 </h2>
 
                 <div
-                    className="
-                        grid
-                        gap-6
-                        md:grid-cols-3
-                    "
-                >
+                    className="flex justify-center text-center gap-1">
 
-                    <div
-                        className="
-                            rounded-2xl
-                            bg-white
-                            p-6
-                            shadow-sm
-                        "
-                    >
-                        <h3 className="font-bold">
+                    <div className="rounded-2xl bg-white p-6 shadow-sm">
+                        <h3 className="font-bold md:text-2xl">
                             🥗 Ingredientes Frescos
                         </h3>
 
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 md:text-lg">
                             Refeições preparadas
                             diariamente.
                         </p>
@@ -178,11 +153,11 @@ function HomePage() {
                             shadow-sm
                         "
                     >
-                        <h3 className="font-bold">
+                        <h3 className="font-bold md:text-2xl">
                             🚚 Entrega Rápida
                         </h3>
 
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 md:text-lg">
                             Receba sem sair de casa.
                         </p>
                     </div>
@@ -195,11 +170,11 @@ function HomePage() {
                             shadow-sm
                         "
                     >
-                        <h3 className="font-bold">
+                        <h3 className="font-bold md:text-2xl">
                             🍽️ Cardápio Variado
                         </h3>
 
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 md:text-lg">
                             Opções para todos os gostos.
                         </p>
                     </div>
@@ -215,18 +190,18 @@ function HomePage() {
                 <section className="mt-12">
 
                     <h2
-                        className="
+                        className="text-center
             mb-6
-            text-3xl
+            text-3xl md:text-5xl
             font-bold
-            text-slate-900
+            text-black
         "
                     >
                         Hall da Fama
                     </h2>
 
                     <p
-                        className="
+                        className="text-center md:text-2xl
             mb-8
             text-slate-600
         "
@@ -236,12 +211,7 @@ function HomePage() {
                     </p>
 
                     <div
-                        className="
-            grid
-            gap-6
-            md:grid-cols-2
-        "
-                    >
+                        className="flex justify-center gap-2">
 
                         {hallFama.map(item => (
 
@@ -354,7 +324,7 @@ function HomePage() {
                     className="
                         mb-8
                         text-center
-                        text-3xl
+                        text-3xl md:text-5xl
                         font-bold
                     "
                 >
@@ -362,12 +332,7 @@ function HomePage() {
                 </h2>
 
                 <div
-                    className="
-                        grid
-                        gap-8
-                        md:grid-cols-3
-                    "
-                >
+                    className="flex justify-center gap-2">
 
                     <div className="text-center">
                         <div className="text-5xl">

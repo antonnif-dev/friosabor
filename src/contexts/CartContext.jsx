@@ -139,40 +139,36 @@ export function CartProvider({
         setItems([]);
     }
 
-    const total =
-        items.reduce(
-            (acc, item) =>
+    const total = items.reduce(
+        (acc, item) =>
 
-                acc +
+            acc +
 
-                (
-                    item.preco *
-                    item.quantidade
-                ),
+            (
+                item.preco *
+                item.quantidade
+            ),
 
-            0
-        );
+        0
+    );
+
+    const cartCount = items.reduce((acc, item) => {
+        return acc + item.quantidade;
+    }, 0);
 
     return (
 
         <CartContext.Provider
 
             value={{
-
                 items,
-
                 addItem,
-
                 removeItem,
-
                 increaseQuantity,
-
                 decreaseQuantity,
-
                 clearCart,
-
-                total
-
+                total,
+                cartCount
             }}
 
         >
